@@ -1,0 +1,15 @@
+{
+    "name": "usman/adv.cake",
+    "authors": [{
+        "name": "Usman Adzhiev",
+        "email": "34717949+UsmanAdd@users.noreply.github.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "classes"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
