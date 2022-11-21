@@ -1,10 +1,52 @@
 <?php
 
-$text = "Привет! Давно не виделись.";
-$result = revertCharacters($text);
+$dataArray = [
+    [
+        "text" => "",
+        "result" => ""
+    ],
+    [
+        "text" => ".",
+        "result" => "."
+    ],
+    [
+        "text" => "Hello",
+        "result" => "Olleh"
+    ],
+    [
+        "text" => "HeLLo",
+        "result" => "OlLEh"
+    ],
+    [
+        "text" => "ГЛОНАСС",
+        "result" => "ССАНОЛГ"
+    ],
+    [
+        "text" => "Я иду с мечем судия",
+        "result" => "Я уди с мечем яидус"
+    ],
+    [
+        "text" => "Привет! Давно не виделись.",
+        "result" => "Тевирп! Онвад ен ьсиледив."
+    ],
+];
 
-echo "Исходная строка: ". $text . "\n";
-echo "Результат: ". $result;
+$testIndex = 0;
+
+foreach ($dataArray as $data){
+    $testIndex++;
+    $msg = "Тест #$testIndex";
+
+    if (revertCharacters($data["text"]) == $data["result"]){
+        $msg .= " пройден";
+    } else {
+        $msg .= " не пройден";
+    }
+
+    $msg .= "\n";
+
+    echo $msg;
+}
 
 function revertCharacters(string $text){
     $wordPattern = '/(\W)/mu';
@@ -36,5 +78,6 @@ function revertCharacters(string $text){
 
     return join('', $reverseText);
 }
+
 
 ?>
